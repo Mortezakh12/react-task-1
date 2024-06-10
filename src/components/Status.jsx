@@ -19,7 +19,7 @@ const Status = () => {
   };
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center">
       <span className="font-bold">وضعیت</span>
       <div className="relative flex px-2 py-1 bg-white rounded-xl font-semibold">
         {tabs.map((tab) => (

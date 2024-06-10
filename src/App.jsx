@@ -1,9 +1,13 @@
+/* eslint-disable no-undef */
 import "./App.css";
+import Category from "./components/Category";
 import Header from "./components/Header";
+import SortDate from "./components/SortDate";
 import Status from "./components/Status";
+import Table from "./components/Table";
 
-// eslint-disable-next-line no-unused-vars
-const projects = [
+// eslint-disable-next-line no-unused-vars, react-refresh/only-export-components
+export const projects = [
   {
     _id: 1,
     title: "طراحی اپلیکیشن سفر آنلاین",
@@ -41,16 +45,22 @@ const projects = [
 
 function App() {
   return (
-    <div className="grid grid-cols-5 gap-4 items-center ">
+    <div className="grid grid-cols-8 gap-4 items-center ">
       <div className="col-span-2 ">
         <Header />
       </div>
-      <div className="col-span-1 ">
+      <div className="col-span-2  ">
         <Status />
       </div>
-      <div className="col-span-1 bg-red-200">3</div>
-      <div className="col-span-1 bg-red-200">4</div>
-      <div className="col-span-5 bg-red-200">5</div>
+      <div className="col-span-2 ">
+        <SortDate sortedProjects={sortedProjects} />
+      </div>
+      <div className="col-span-2 ">
+        <Category />
+      </div>
+      <div className="col-span-8 ">
+        <Table sortedProjects={sortedProjects} />
+      </div>
     </div>
   );
 }
