@@ -1,9 +1,7 @@
 /* eslint-disable no-undef */
 import "./App.css";
-import Category from "./components/Category";
-import Header from "./components/Header";
-import SortDate from "./components/SortDate";
-import Status from "./components/Status";
+import SortTools from "./components/SortTools";
+
 import Table from "./components/Table";
 
 // eslint-disable-next-line no-unused-vars, react-refresh/only-export-components
@@ -44,22 +42,29 @@ export const projects = [
 ];
 
 function App() {
+  // const [sortBy, setSortBy] = useState(true);
+  // let sortedProjects;
+  // if (sortBy) {
+  //   // eslint-disable-next-line no-unused-vars
+  //   sortedProjects = [...projects].sort(
+  //     (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+  //   );
+  // } else {
+  //   // eslint-disable-next-line no-unused-vars
+  //   sortedProjects = [...projects].sort(
+  //     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  //   );
+  // }
   return (
     <div className="grid grid-cols-8 gap-4 items-center ">
       <div className="col-span-2 ">
-        <Header />
+        <div className=" font-bold text-2xl">لیست پروژه ها</div>
       </div>
-      <div className="col-span-2  ">
-        <Status />
-      </div>
-      <div className="col-span-2 ">
-        <SortDate sortedProjects={sortedProjects} />
-      </div>
-      <div className="col-span-2 ">
-        <Category />
+      <div className="col-span-6  ">
+        <SortTools />
       </div>
       <div className="col-span-8 ">
-        <Table sortedProjects={sortedProjects} />
+        <Table />
       </div>
     </div>
   );

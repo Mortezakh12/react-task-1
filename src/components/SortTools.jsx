@@ -1,6 +1,27 @@
+import { projects } from "../App";
+
+const SortTools = () => {
+  return (
+    <div className="flex justify-between gap-4">
+      <Status />
+      <SortDate />
+      <Category />
+    </div>
+  );
+};
+
+export default SortTools;
 import { useState } from "react";
 
-const Status = () => {
+export const SortDate = () => {
+  return (
+    <select className="py-3 px-2 rounded-xl w-full ">
+      <option>مرتب سازی(جدیدترین)</option>
+      <option>مرتب سازی(قدیمی ترین)</option>
+    </select>
+  );
+};
+export const Status = () => {
   const [activeTab, setActiveTab] = useState("همه");
   const tabs = [
     { id: 1, label: "همه" },
@@ -38,4 +59,13 @@ const Status = () => {
     </div>
   );
 };
-export default Status;
+
+export const Category = () => {
+  return (
+    <select className="py-3 w-full rounded-xl text-center ">
+      {projects.map((cat) => {
+        return <option key={cat.category.id}>{cat.category.title}</option>;
+      })}
+    </select>
+  );
+};

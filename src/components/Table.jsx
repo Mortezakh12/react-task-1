@@ -1,6 +1,6 @@
 import { TbTextPlus } from "react-icons/tb";
 import { projects } from "../App";
-const Table = ({sortedProjects}) => {
+const Table = ({sortBy,setSortBy}) => {
   return (
     <div>
       <table className="border-collapse border-spacing-0 w-full ">
